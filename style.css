@@ -1,0 +1,385 @@
+/* RESET & BASE STYLES */
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* HEADER */
+header {
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    height: 50px;
+    /* Ganti background ini jika sudah ada logo asli transparan */ 
+}
+
+.logo-text h1 {
+    font-size: 1.2rem;
+    color: #004080; /* Warna Biru Industri */
+}
+
+.logo-text span {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    font-weight: 500;
+    color: #555;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #004080;
+}
+
+/* HERO SECTION */
+#hero {
+    background: linear-gradient(rgba(0,64,128,0.8), rgba(0,64,128,0.8)), url('images/Background PT Coppal.png');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn {
+    display: inline-block;
+    background: #e63946; /* Aksen Merah sedikit untuk kontras */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* SECTIONS COMMON */
+section {
+    padding: 60px 0;
+    scroll-margin-top: 80px; /* <-- INI SOLUSINYA */
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    font-family: 'Montserrat', sans-serif; /* Font Tegas */
+    font-size: 2.5rem;    /* Ukuran Besar (3.5rem agar sama dengan Visi Misi) */
+    color: #0056b3;       /* Warna Biru Terang */
+    font-weight: 700;     /* Tebal */
+    
+    /* Garis Bawah Merah */
+    display: inline-block;
+    border-bottom: 5px solid #e63946; /* Garis merah dipertebal sedikit agar seimbang */
+    padding-bottom: 10px; /* Jarak tulisan ke garis */
+    margin-bottom: 10px;
+}
+
+.bg-light {
+    background-color: #fff;
+}
+
+/* ABOUT & VISION */
+.row {
+    display: flex;
+    gap: 40px;
+}
+
+.col {
+    flex: 1;
+}
+
+/* Mengatur agar teks paragraf di bagian About Us rata tengah */
+#about .content-text {
+    text-align: center;  /* Kuncinya: Membuat teks rata tengah */
+    max-width: 900px;    /* Opsional: Membatasi lebar agar baris tidak terlalu panjang */
+    margin: 0 auto;      /* Memastikan posisi blok teks tetap di tengah layar */
+}
+
+/* PENGATURAN POSISI KHUSUS VISI MISI */
+#visi-misi {
+    /* 1. Kurangi jarak henti scroll (Default global tadi 100px, kita turunkan) */
+    scroll-margin-top: 60px; 
+
+    /* 2. Kurangi jarak kosong di atas tulisan (Default global 60px, kita tipiskan) */
+    padding-top: 20px; 
+}
+
+.col h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;    /* Ukuran Font Besar */
+    font-weight: 700;     /* Tebal */
+    color: #0056b3;       /* Warna Biru Terang */
+    margin-bottom: 20px;
+    line-height: 1.2;     /* Jarak baris rapat */
+}
+
+.col ul li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.col ul li::before {
+    content: "•";
+    color: #e63946;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* TABLES (FACILITIES) */
+.table-responsive {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin-bottom: 10px;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #004080;
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.note {
+    font-size: 0.8rem;
+    color: #777;
+    font-style: italic;
+}
+
+/* GALLERY (PRODUCTS) */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.02);
+}
+
+/* Perbaikan posisi scroll khusus Produk di Laptop */
+#products {
+    padding-top: 20px !important;      /* Hapus space kosong */
+    scroll-margin-top: 60px !important; /* Jarak henti scroll */
+}
+
+/* CUSTOMERS */
+.customer-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.badge {
+    background: #e9ecef;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    color: #495057;
+    border: 1px solid #ced4da;
+}
+
+.client-logo {
+    max-width: 200px;    /* Ini kuncinya: membatasi lebar maksimal gambar */
+    height: 80px;        /* Menjaga tinggi agar seragam */
+    object-fit: contain; /* Agar gambar tidak gepeng/penyok */
+    margin: 15px;        /* Memberi jarak antar logo */
+    transition: transform 0.3s; /* Efek halus saat disentuh */
+}
+/* CONTACT */
+.contact-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.contact-info, .map {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-info h2 {
+    color: #004080;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+}
+
+/* FOOTER */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    /* 1. Header & Logo: Logo di atas, Menu di bawahnya */
+    .nav-container {
+        flex-direction: column !important; /* Logo atas, Menu bawah */
+        align-items: center !important;
+        padding: 10px;
+    }
+
+    /* 2. Menu Navigasi: UBAH JADI MENDATAR (ROW) */
+    nav ul {
+        display: flex !important;      /* Pastikan pakai Flexbox */
+        flex-direction: row !important; /* KUNCI UTAMA: Baris ke samping (bukan column) */
+        flex-wrap: wrap !important;     /* Izinkan turun baris jika layar sempit */
+        justify-content: center !important; /* Posisi di tengah */
+        align-items: center !important;
+        gap: 10px;                      /* Jarak antar menu */
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    nav li {
+        width: auto !important; 
+        margin: 0;
+    }
+
+    /* Gaya Tombol Menu agar enak dipencet di HP */
+    nav a {
+        display: inline-block;
+        font-size: 0.85rem;      
+        padding: 5px 10px;       
+        color: #333;
+        font-weight: 600; /* Agak tebal agar terbaca */
+    }
+
+    /* 3. Hero Section (Bagian Biru) */
+    #hero {
+        height: auto;           
+        padding: 60px 20px;
+        min-height: 250px;
+    }
+
+    .hero-content h2 {
+        font-size: 1.4rem;      
+        line-height: 1.3;
+        margin-bottom: 15px;
+    }
+    
+    /* 4. Layout Umum agar tidak berantakan */
+    .row, .contact-wrapper {
+        flex-direction: column;
+    }
+    
+    /* 5. Tabel agar bisa discroll menyamping */
+    .table-responsive {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    /* --- KODE BARU: PERBAIKAN SCROLL MENU --- */
+    #about,  
+    #facilities,  
+    #customers,
+    #contact {
+        scroll-margin-top: 180px !important; 
+    }
+
+    /* Aturan KHUSUS PRODUK (Karena ada padding yang harus dibuang) */
+    #products {
+        scroll-margin-top: 160px !important; /* Jarak henti */
+        padding-top: 20px !important;        /* Hapus space kosong */
+    }
+
+    #visi-misi {
+        scroll-margin-top: 180px !important; /* Jarak henti */
+        padding-top: 20px !important;        /* Hapus space kosong */
+    }
+}
